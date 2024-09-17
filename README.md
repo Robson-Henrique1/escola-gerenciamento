@@ -1,59 +1,74 @@
-Sistema de Gerenciamento de Escolas e Usuários
-Este projeto é uma API desenvolvida com CodeIgniter 4 no backend e React no frontend, com o objetivo de gerenciar usuários, escolas, professores, e alunos. Ele utiliza JWT para autenticação, além de integração com um banco de dados MySQL. Professores podem gerenciar alunos, enquanto administradores têm permissões mais amplas para gerenciar todas as entidades.
+# Sistema de Gerenciamento de Usuários, Escolas, Professores e Alunos
 
-📋 Sumário
-Resumo
-Tecnologias Utilizadas
-Instalação
-Configuração
-Endpoints
-Autenticação JWT
-Contribuição
-📄 Resumo
-Esta API permite o gerenciamento de alunos, professores, escolas e usuários do sistema, com permissões baseadas em papéis. Professores só podem ver e gerenciar alunos, enquanto administradores têm controle total sobre todos os recursos.
+Este projeto é um sistema de gerenciamento de usuários, escolas, professores e alunos, desenvolvido como parte de um desafio para estagiário. A aplicação utiliza **CodeIgniter 4** no backend e **React** no frontend, com autenticação baseada em **JWT** e um banco de dados **MySQL**.
 
-As principais funcionalidades incluem:
+## 🚀 Tecnologias
 
-Cadastro de usuários, alunos, professores e escolas.
-Sistema de login com autenticação via CPF e senha.
-Autenticação via JWT com permissões definidas por papéis.
-Exibição de listas de alunos, professores e escolas.
-🚀 Tecnologias Utilizadas
-Backend: CodeIgniter 4
-Frontend: React.js
-Autenticação: JSON Web Token (JWT)
-Banco de Dados: MySQL
-ORM: Utilizado para facilitar as interações com o banco de dados
+- **Frontend:** React
+- **Backend:** CodeIgniter 4
+- **Autenticação:** JWT
+- **Banco de Dados:** MySQL
+- **ORM:** Eloquent (ou outro ORM de sua escolha)
 
-📬 Endpoints
-Usuários
-Método	Endpoint	Descrição
-POST	/api/usuarios	Cria um novo usuário (Administrador ou Professor)
-GET	/api/usuarios	Retorna a lista de todos os usuários
-GET	/api/usuarios/{id}	Retorna detalhes de um usuário específico
-PUT	/api/usuarios/{id}	Atualiza os dados de um usuário
-DELETE	/api/usuarios/{id}	Deleta um usuário
-Alunos
-Método	Endpoint	Descrição
-POST	/api/alunos	Cria um novo aluno
-GET	/api/alunos	Retorna a lista de todos os alunos
-GET	/api/alunos/{id}	Retorna detalhes de um aluno específico
-PUT	/api/alunos/{id}	Atualiza os dados de um aluno
-DELETE	/api/alunos/{id}	Deleta um aluno
-Professores
-Método	Endpoint	Descrição
-POST	/api/professores	Cria um novo professor
-GET	/api/professores	Retorna a lista de todos os professores
-GET	/api/professores/{id}	Retorna detalhes de um professor específico
-PUT	/api/professores/{id}	Atualiza os dados de um professor
-DELETE	/api/professores/{id}	Deleta um professor
-Escolas
-Método	Endpoint	Descrição
-POST	/api/escolas	Cria uma nova escola
-GET	/api/escolas	Retorna a lista de todas as escolas
-GET	/api/escolas/{id}	Retorna detalhes de uma escola específica
-PUT	/api/escolas/{id}	Atualiza os dados de uma escola
-DELETE	/api/escolas/{id}	Deleta uma escola
-Esses endpoints cobrem todas as operações básicas de CRUD para usuários, alunos, professores e escolas. Para cada recurso, é possível criar, ler, atualizar e deletar registros.
+## 📋 Funcionalidades
 
-Os endpoints devem ser autenticados com JWT, e o token deve ser enviado no cabeçalho da requisição com o formato:
+- **Cadastro e Login**: Usuários podem se cadastrar e fazer login com CPF e senha.
+- **Gerenciamento de Usuários**: Admins podem criar, visualizar, atualizar e excluir usuários.
+- **Gerenciamento de Alunos**: Admins podem criar, visualizar, atualizar e excluir alunos.
+- **Gerenciamento de Professores**: Admins podem criar, visualizar, atualizar e excluir professores.
+- **Gerenciamento de Escolas**: Admins podem criar, visualizar, atualizar e excluir escolas.
+- **Autenticação JWT**: Protege as rotas da API e gerencia sessões de usuário.
+
+## 📬 Endpoints
+
+### Usuários
+
+| Método  | Endpoint          | Descrição                                          |
+|---------|-------------------|--------------------------------------------------|
+| `POST`  | `/api/usuarios`    | Cria um novo usuário (Administrador ou Professor) |
+| `GET`   | `/api/usuarios`    | Retorna a lista de todos os usuários              |
+| `GET`   | `/api/usuarios/{id}`| Retorna detalhes de um usuário específico         |
+| `PUT`   | `/api/usuarios/{id}`| Atualiza os dados de um usuário                   |
+| `DELETE`| `/api/usuarios/{id}`| Deleta um usuário                                 |
+
+### Alunos
+
+| Método  | Endpoint         | Descrição                                          |
+|---------|------------------|--------------------------------------------------|
+| `POST`  | `/api/alunos`     | Cria um novo aluno                                |
+| `GET`   | `/api/alunos`     | Retorna a lista de todos os alunos                |
+| `GET`   | `/api/alunos/{id}`| Retorna detalhes de um aluno específico           |
+| `PUT`   | `/api/alunos/{id}`| Atualiza os dados de um aluno                     |
+| `DELETE`| `/api/alunos/{id}`| Deleta um aluno                                   |
+
+### Professores
+
+| Método  | Endpoint            | Descrição                                          |
+|---------|---------------------|--------------------------------------------------|
+| `POST`  | `/api/professores`   | Cria um novo professor                            |
+| `GET`   | `/api/professores`   | Retorna a lista de todos os professores           |
+| `GET`   | `/api/professores/{id}`| Retorna detalhes de um professor específico     |
+| `PUT`   | `/api/professores/{id}`| Atualiza os dados de um professor               |
+| `DELETE`| `/api/professores/{id}`| Deleta um professor                             |
+
+### Escolas
+
+| Método  | Endpoint         | Descrição                                          |
+|---------|------------------|--------------------------------------------------|
+| `POST`  | `/api/escolas`    | Cria uma nova escola                              |
+| `GET`   | `/api/escolas`    | Retorna a lista de todas as escolas               |
+| `GET`   | `/api/escolas/{id}`| Retorna detalhes de uma escola específica        |
+| `PUT`   | `/api/escolas/{id}`| Atualiza os dados de uma escola                  |
+| `DELETE`| `/api/escolas/{id}`| Deleta uma escola                                |
+
+## 🔑 Autenticação
+
+A autenticação é gerenciada por JWT. Após o login, um token JWT é gerado e deve ser incluído no cabeçalho `Authorization` das requisições subsequentes.
+
+## 📄 Licença
+
+Este projeto é licenciado sob a [MIT License](LICENSE).
+
+## 📞 Contato
+
+Se você tiver alguma dúvida ou sugestão, entre em contato pelo e-mail: [seuemail@example.com](mailto:seuemail@example.com).
