@@ -1,10 +1,9 @@
 # Sistema de Gerenciamento de Usuários, Escolas, Professores e Alunos
 
-Este projeto é um sistema de gerenciamento de usuários, escolas, professores e alunos, desenvolvido como parte de um desafio para estagiário. A aplicação utiliza **CodeIgniter 4** no backend e **React** no frontend, com autenticação baseada em **JWT** e um banco de dados **MySQL**.
+Este projeto é um sistema de gerenciamento de usuários, escolas, professores e alunos, desenvolvido como parte de um desafio para estagiário. A aplicação utiliza **CodeIgniter 4** no backend, com autenticação baseada em **JWT** e um banco de dados **MySQL**.
 
 ## 🚀 Tecnologias
 
-- **Frontend:** React
 - **Backend:** CodeIgniter 4
 - **Autenticação:** JWT
 - **Banco de Dados:** MySQL
@@ -26,10 +25,6 @@ Este projeto é um sistema de gerenciamento de usuários, escolas, professores e
 | Método  | Endpoint          | Descrição                                          |
 |---------|-------------------|--------------------------------------------------|
 | `POST`  | `/api/usuarios`    | Cria um novo usuário (Administrador ou Professor) |
-| `GET`   | `/api/usuarios`    | Retorna a lista de todos os usuários              |
-| `GET`   | `/api/usuarios/{id}`| Retorna detalhes de um usuário específico         |
-| `PUT`   | `/api/usuarios/{id}`| Atualiza os dados de um usuário                   |
-| `DELETE`| `/api/usuarios/{id}`| Deleta um usuário                                 |
 
 ### Alunos
 
@@ -64,11 +59,3 @@ Este projeto é um sistema de gerenciamento de usuários, escolas, professores e
 ## 🔑 Autenticação
 
 A autenticação é gerenciada por JWT. Após o login, um token JWT é gerado e deve ser incluído no cabeçalho `Authorization` das requisições subsequentes.
-
-## 📄 Licença
-
-Este projeto é licenciado sob a [MIT License](LICENSE).
-
-## 📞 Contato
-
-Se você tiver alguma dúvida ou sugestão, entre em contato pelo e-mail: [seuemail@example.com](mailto:seuemail@example.com).
