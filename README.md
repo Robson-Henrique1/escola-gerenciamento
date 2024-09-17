@@ -1,72 +1,59 @@
-<<<<<<< HEAD
-# CodeIgniter 4 Application Starter
+Sistema de Gerenciamento de Escolas e Usuários
+Este projeto é uma API desenvolvida com CodeIgniter 4 no backend e React no frontend, com o objetivo de gerenciar usuários, escolas, professores, e alunos. Ele utiliza JWT para autenticação, além de integração com um banco de dados MySQL. Professores podem gerenciar alunos, enquanto administradores têm permissões mais amplas para gerenciar todas as entidades.
 
-## What is CodeIgniter?
+📋 Sumário
+Resumo
+Tecnologias Utilizadas
+Instalação
+Configuração
+Endpoints
+Autenticação JWT
+Contribuição
+📄 Resumo
+Esta API permite o gerenciamento de alunos, professores, escolas e usuários do sistema, com permissões baseadas em papéis. Professores só podem ver e gerenciar alunos, enquanto administradores têm controle total sobre todos os recursos.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+As principais funcionalidades incluem:
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+Cadastro de usuários, alunos, professores e escolas.
+Sistema de login com autenticação via CPF e senha.
+Autenticação via JWT com permissões definidas por papéis.
+Exibição de listas de alunos, professores e escolas.
+🚀 Tecnologias Utilizadas
+Backend: CodeIgniter 4
+Frontend: React.js
+Autenticação: JSON Web Token (JWT)
+Banco de Dados: MySQL
+ORM: Utilizado para facilitar as interações com o banco de dados
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+📬 Endpoints
+Usuários
+Método	Endpoint	Descrição
+POST	/api/usuarios	Cria um novo usuário (Administrador ou Professor)
+GET	/api/usuarios	Retorna a lista de todos os usuários
+GET	/api/usuarios/{id}	Retorna detalhes de um usuário específico
+PUT	/api/usuarios/{id}	Atualiza os dados de um usuário
+DELETE	/api/usuarios/{id}	Deleta um usuário
+Alunos
+Método	Endpoint	Descrição
+POST	/api/alunos	Cria um novo aluno
+GET	/api/alunos	Retorna a lista de todos os alunos
+GET	/api/alunos/{id}	Retorna detalhes de um aluno específico
+PUT	/api/alunos/{id}	Atualiza os dados de um aluno
+DELETE	/api/alunos/{id}	Deleta um aluno
+Professores
+Método	Endpoint	Descrição
+POST	/api/professores	Cria um novo professor
+GET	/api/professores	Retorna a lista de todos os professores
+GET	/api/professores/{id}	Retorna detalhes de um professor específico
+PUT	/api/professores/{id}	Atualiza os dados de um professor
+DELETE	/api/professores/{id}	Deleta um professor
+Escolas
+Método	Endpoint	Descrição
+POST	/api/escolas	Cria uma nova escola
+GET	/api/escolas	Retorna a lista de todas as escolas
+GET	/api/escolas/{id}	Retorna detalhes de uma escola específica
+PUT	/api/escolas/{id}	Atualiza os dados de uma escola
+DELETE	/api/escolas/{id}	Deleta uma escola
+Esses endpoints cobrem todas as operações básicas de CRUD para usuários, alunos, professores e escolas. Para cada recurso, é possível criar, ler, atualizar e deletar registros.
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
-
-## Installation & updates
-
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
-
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
-
-## Setup
-
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
-
-## Important Change with index.php
-
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
-
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
-
-**Please** read the user guide for a better explanation of how CI4 works!
-
-## Repository Management
-
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 7.4 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-> [!WARNING]
-> The end of life date for PHP 7.4 was November 28, 2022.
-> The end of life date for PHP 8.0 was November 26, 2023.
-> If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> The end of life date for PHP 8.1 will be November 25, 2024.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
-=======
-# escola-gerenciamento
->>>>>>> 4c7910671b2dbfc85f80ddeb4f25a4fbb1807dcf
+Os endpoints devem ser autenticados com JWT, e o token deve ser enviado no cabeçalho da requisição com o formato:
